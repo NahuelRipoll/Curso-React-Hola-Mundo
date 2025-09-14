@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
+
 interface CardProps {
-  body: string; // Define the type of the body prop
+  children: ReactNode; // Define the type of the body prop
 }
 
 function Card(props: CardProps) {
-  const { body } = props;
+  const { children } = props;
   return (
     <div
       className="card"
@@ -11,7 +13,7 @@ function Card(props: CardProps) {
         width: "350px",
       }}
     >
-      <div>{body}</div>
+      <div className="card-body">{children}</div>
     </div>
   );
 }
